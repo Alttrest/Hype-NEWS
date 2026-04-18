@@ -13,7 +13,7 @@ class Article(Base):
     content = Column(Text, nullable=True)
     summary = Column(Text, nullable=True)
     published_at = Column(DateTime(timezone=True), server_default=func.now())
-    is_vibe_coding = Column(Boolean, default=False)
+    is_hype_tech = Column(Boolean, default=False)
     is_robotics = Column(Boolean, default=False)
 
 class RSSSource(Base):

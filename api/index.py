@@ -107,7 +107,7 @@ async def cron_job(secret: str = None, db: Session = Depends(get_db)):
         scan_news()
         
         # 2. Kategoriler için özet ve podcast oluştur
-        categories = ["Tümü", "Gündem", "Teknoloji", "Ekonomi", "Spor", "Bilim", "Robotik", "Vibe Coding", "Yapay Zeka"]
+        categories = ["Tümü", "Gündem", "Teknoloji", "Ekonomi", "Spor", "Bilim", "Robotik", "Hype Tech", "Yapay Zeka"]
         
         for cat in categories:
             query = db.query(Article)

@@ -136,6 +136,8 @@ def scan_single_feed(db, source_name: str, feed_url: str, forced_category: str =
             elif is_robotics:
                 category = "Robotik"
             elif is_vibe:
+                if category == "Hype Tech":
+                    extra_instruction = "Özetin içinde son dönem popülerleşen Hype Tech ve AI agent araçlarını (Cursor, Windsurf, Claude Code, Devin, GitHub Copilot, Bolt, v0 gibi) ayrıca vurgula."
                 category = "Hype Tech"
             elif "ai" in text_lower or "artificial intelligence" in text_lower or "yapay zeka" in text_lower:
                 category = "Yapay Zeka"
@@ -158,7 +160,7 @@ def scan_single_feed(db, source_name: str, feed_url: str, forced_category: str =
                 content=clean_text[:5000],
                 summary=summary,
                 published_at=pub_date,
-                is_vibe_coding=is_vibe,
+                is_hype_tech=is_vibe,
                 is_robotics=is_robotics
             )
             db.add(article)

@@ -7,7 +7,7 @@
     },
     {
       "source": "/(.*)",
-      "destination": "/"
+      "destination": "/react-app/dist/$1"
     }
   ],
   "crons": [

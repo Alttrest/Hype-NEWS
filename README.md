@@ -1,16 +1,5 @@
 # 🌊 Hype News: AI-Powered News Aggregator
 
-```text
-  _    _                      _   _                      
- | |  | |                    | \ | |                     
- | |__| |_   _ _ __   ___    |  \| | _____      _____  
- |  __  | | | | '_ \ / _ \   | . ` |/ _ \ \ /\ / / __| 
- | |  | | |_| | |_) |  __/   | |\  |  __/\ V  V /\__ \ 
- |_|  |_|\__, | .__/ \___|   |_| \_|\___| \_/\_/ |___/ 
-          __/ | |                                      
-         |___/|_|                                      
-```
-
 Hype News, geleneksel haber okuma deneyimini modern, interaktif ve yapay zeka destekli bir dijital sanat eserine dönüştüren yeni nesil bir haber istasyonudur.
 
 ## ✨ Öne Çıkan Özellikler
