@@ -1,4 +1,4 @@
-from fastapi import FastAPI, Depends, BackgroundTasks
+from fastapi import FastAPI, Depends, BackgroundTasks, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from fastapi.staticfiles import StaticFiles
@@ -173,3 +173,32 @@ def delete_source(source_id: int, db: Session = Depends(get_db)):
     db.delete(source)
     db.commit()
     return {"message": "Kaynak silindi."}
+
+# Static files and Catch-all for React
+# Note: Vercel handles this via vercel.json, but on Railway we serve it through FastAPI
+frontend_dist = os.path.join(os.path.dirname(os.path.dirname(__file__)), "react-app", "dist")
+
+if os.path.exists(frontend_dist):
+    # Mount assets folder
+    assets_path = os.path.join(frontend_dist, "assets")
+    if os.path.exists(assets_path):
+        app.mount("/assets", StaticFiles(directory=assets_path), name="assets")
+    
+    # Catch-all route to serve the SPA
+    @app.get("/{rest_of_path:path}")
+    async def serve_spa(rest_of_path: str):
+        # Don't intercept API calls
+        if rest_of_path.startswith("api/"):
+            raise HTTPException(status_code=404)
+        
+        file_path = os.path.join(frontend_dist, rest_of_path)
+        if os.path.isfile(file_path):
+            return FileResponse(file_path)
+        return FileResponse(os.path.join(frontend_dist, "index.html"))
+
+@app.get("/")
+async def root():
+    index_path = os.path.join(frontend_dist, "index.html")
+    if os.path.exists(index_path):
+        return FileResponse(index_path)
+    return {"message": "Hype News API is running. Build the frontend to see the site."}
