@@ -1,0 +1,9 @@
+fastapi
+uvicorn
+sqlalchemy
+feedparser
+groq
+beautifulsoup4
+edge-tts
+requests
+python-dotenv

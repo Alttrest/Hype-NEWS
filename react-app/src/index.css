@@ -1,0 +1,111 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #f8fafc;
+  --color-surface: #ffffff;
+  --color-anthracite: #334155;
+  --color-accent-light: #818cf8;
+  --color-accent: #6366f1;
+  --color-accent-dark: #4f46e5;
+  --font-sans: 'Inter', sans-serif;
+}
+
+@layer base {
+  body {
+    background-color: var(--color-background);
+    color: var(--color-anthracite);
+    -webkit-font-smoothing: antialiased;
+    transition: background-color 0.3s ease, color 0.3s ease;
+  }
+
+  /* Dark Mode */
+  body.dark {
+    --color-background: #0f172a;
+    --color-surface: #1e293b;
+    --color-anthracite: #e2e8f0;
+    background-color: #0f172a;
+    color: #e2e8f0;
+  }
+}
+
+@layer components {
+  .glass-card {
+    background-color: rgba(255, 255, 255, 0.9);
+    -webkit-backdrop-filter: blur(8px);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(226, 232, 240, 0.5);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    border-radius: 1rem;
+    transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  body.dark .glass-card {
+    background-color: rgba(30, 41, 59, 0.9);
+    border-color: rgba(51, 65, 85, 0.5);
+  }
+
+  body.dark nav {
+    background-color: rgba(15, 23, 42, 0.8) !important;
+    border-color: rgba(51, 65, 85, 0.5) !important;
+  }
+
+  body.dark input, body.dark select {
+    background-color: #1e293b !important;
+    border-color: #334155 !important;
+    color: #e2e8f0 !important;
+  }
+
+  body.dark .bg-white {
+    background-color: #1e293b !important;
+  }
+
+  body.dark .bg-surface {
+    background-color: #1e293b !important;
+  }
+
+  body.dark .bg-background {
+    background-color: #0f172a !important;
+  }
+
+  body.dark .text-slate-800,
+  body.dark .text-slate-700,
+  body.dark .text-slate-600 {
+    color: #cbd5e1 !important;
+  }
+
+  body.dark .text-slate-500,
+  body.dark .text-slate-400 {
+    color: #94a3b8 !important;
+  }
+
+  body.dark .border-slate-200,
+  body.dark .border-slate-100 {
+    border-color: #334155 !important;
+  }
+
+  body.dark .bg-slate-50 {
+    background-color: #1e293b !important;
+  }
+
+  body.dark .bg-slate-100 {
+    background-color: #334155 !important;
+  }
+
+  body.dark .shadow-slate-200\/40 {
+    --tw-shadow-color: rgba(15, 23, 42, 0.4) !important;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  /* Unified Viewport for Mobile Safari */
+  .min-h-screen-ios {
+    min-h: 100vh;
+    min-h: 100dvh;
+  }
+}
