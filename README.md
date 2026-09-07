@@ -1,3 +1,15 @@
+<div align="center">
+  <h1>✨ Hype-NEWS ✨</h1>
+  <p><i>Hype News, geleneksel haber okuma deneyimini modern, interaktif ve yapay zeka destekli bir dijital sanat eserine dönüştüren yeni nesil bir haber istasyonudur.</i></p>
+
+  <!-- Badges -->
+  <img src="https://img.shields.io/github/languages/top/Alttrest/Hype-NEWS?style=for-the-badge&color=blue" alt="Top Language" />
+  <img src="https://img.shields.io/github/repo-size/Alttrest/Hype-NEWS?style=for-the-badge" alt="Repo Size" />
+  <img src="https://img.shields.io/github/last-commit/Alttrest/Hype-NEWS?style=for-the-badge" alt="Last Commit" />
+</div>
+
+<br />
+
 # 🌊 Hype News: AI-Powered News Aggregator
 
 Hype News, geleneksel haber okuma deneyimini modern, interaktif ve yapay zeka destekli bir dijital sanat eserine dönüştüren yeni nesil bir haber istasyonudur.
